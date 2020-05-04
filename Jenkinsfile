@@ -9,7 +9,7 @@ pipeline {
          genericVariables: [
             [key: 'userName', value: '$.userName']
          ],
-         token: '5cb90505dc1b874d5d2731553f5f8f1b3499e33e',
+         token: $GENERIC_WEBHOOK_TOKEN,
          printContributedVariables: true,
          printPostContent: true,
          silentResponse: false
@@ -20,7 +20,6 @@ pipeline {
          steps {
             sh """
                echo Hello $userName!
-               echo $GENERIC_WEBHOOK_TOKEN
                """
          }
       }
