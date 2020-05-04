@@ -1,18 +1,19 @@
 pipeline {
    agent any
+   environment {
+      TOKEN = credentials('helloWorldMultiBrachToken')
+   }
    triggers
-   {
-      withCredentials([string(credentialsId: 'helloWorldMultiBrachToken', variable: 'token')]) {         
-         GenericTrigger(
-            genericVariables: [
-               [key: 'userName', value: '$.userName']
-            ],
-            token: token,
-            printContributedVariables: true,
-            printPostContent: true,
-            silentResponse: false
-         )
-      }
+   {      
+      GenericTrigger(
+         genericVariables: [
+            [key: 'userName', value: '$.userName']
+         ],
+         token: env.TOKEN,
+         printContributedVariables: true,
+         printPostContent: true,
+         silentResponse: false
+      )
    }
    stages {
       stage('Hello') {
