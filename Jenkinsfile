@@ -1,5 +1,8 @@
 pipeline {
-   agent any   
+   agent any
+   environment {
+      GENERIC_WEBHOOK_TOKEN = credentials('helloWorldMultiBrachToken')
+   }
    triggers
    {      
       GenericTrigger(
@@ -16,6 +19,7 @@ pipeline {
       stage('Hello') {
          steps {
             sh "echo Hello $userName!"
+            SH "echo $GENERIC_WEBHOOK_TOKEN"
          }
       }
    }
