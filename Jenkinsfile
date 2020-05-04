@@ -1,15 +1,12 @@
 pipeline {
-   agent any
-   environment {
-      TOKEN = credentials('helloWorldMultiBrachToken')
-   }
+   agent any   
    triggers
    {      
       GenericTrigger(
          genericVariables: [
             [key: 'userName', value: '$.userName']
          ],
-         token: env.TOKEN,
+         token: '5cb90505dc1b874d5d2731553f5f8f1b3499e33e',
          printContributedVariables: true,
          printPostContent: true,
          silentResponse: false
