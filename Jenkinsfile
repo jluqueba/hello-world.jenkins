@@ -7,7 +7,7 @@ pipeline {
    {      
       GenericTrigger(
          genericVariables: [
-            [key: 'userName', value: '$.userName']
+            [key: 'userName', value: '$.userName', defaultValue: 'jluqueba']
          ],
          token: env.GENERIC_WEBHOOK_TOKEN,
          printContributedVariables: true,
