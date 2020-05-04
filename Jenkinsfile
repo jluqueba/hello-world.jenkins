@@ -9,7 +9,7 @@ pipeline {
          genericVariables: [
             [key: 'userName', value: '$.userName']
          ],
-         token: $GENERIC_WEBHOOK_TOKEN,
+         token: env.GENERIC_WEBHOOK_TOKEN,
          printContributedVariables: true,
          printPostContent: true,
          silentResponse: false
