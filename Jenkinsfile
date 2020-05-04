@@ -15,7 +15,7 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
-            sh "echo Hello"
+            sh "echo Hello $userName!"
          }
       }
    }
