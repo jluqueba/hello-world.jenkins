@@ -18,8 +18,10 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
-            sh "echo Hello $userName!"
-            SH "echo $GENERIC_WEBHOOK_TOKEN"
+            sh """
+               echo Hello $userName!
+               echo $GENERIC_WEBHOOK_TOKEN
+               """
          }
       }
    }
