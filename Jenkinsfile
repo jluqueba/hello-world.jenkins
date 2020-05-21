@@ -4,7 +4,7 @@ pipeline {
    {      
       GenericTrigger(
          genericVariables: [
-            [key: 'userName', value: '$.userName']
+            [key: 'userName', value: '$.userName', regexpFilter: '^(Postman.+)$']
          ],
          token: '5cb90505dc1b874d5d2731553f5f8f1b3499e33e',
          printContributedVariables: true,
